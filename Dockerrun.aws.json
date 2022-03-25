@@ -1,0 +1,37 @@
+{
+  "AWSBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "163494315/multi-client",
+      "hostname": "client",
+      "essential": false      
+    },
+    {
+      "name": "server",
+      "image": "163494315/multi-server",
+      "hostname": "api",
+      "essential": false      
+    },
+    {
+      "name": "worker"
+      "image": "163494315/multi-server",
+      "hostname": "worker",
+      "essential": false      
+    },
+    {
+      "name": "nginx",
+      "image": "163494315/multi-nginx",
+      "hostname": "essential",
+      "essential": true,
+      "portMappings": [
+	{
+	  "hostPort": 80,
+	  "containerPort": 80
+        }
+      ],
+      "links": ["client","server"]
+    }    
+
+  ]
+}
