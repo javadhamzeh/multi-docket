@@ -30,6 +30,7 @@ deploy:
   env: 'MultiDocker-env'
   bucket_name: 'elasticbeanstalk-us-east-1-986617472041'
   bucket_path: 'docker-multi'
+  edge: true
   on:
     branch: main
   access_key_id: $AWS_ACCESS_KEY
